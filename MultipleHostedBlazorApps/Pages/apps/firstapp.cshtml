@@ -1,0 +1,15 @@
+﻿@page
+@using FirstApp;
+
+@{
+    ViewData["Title"] = "First app";
+}
+
+<div class="text-center">
+    <h1 class="display-4">First App</h1>
+</div>
+
+<base href="/apps/firstapp/" />
+
+<component type="typeof(App)" render-mode="WebAssemblyPrerendered"/>
+<script src="_framework/blazor.webassembly.js"></script>

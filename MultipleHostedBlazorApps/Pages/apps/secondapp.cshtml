@@ -1,0 +1,14 @@
+﻿@page
+@using SecondApp;
+@{
+    ViewData["Title"] = "Second app";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Second App</h1>
+</div>
+
+<base href="/apps/secondapp/" />
+
+<component type="typeof(App)" render-mode="WebAssemblyPrerendered"/>
+<script src="_framework/blazor.webassembly.js"></script>
