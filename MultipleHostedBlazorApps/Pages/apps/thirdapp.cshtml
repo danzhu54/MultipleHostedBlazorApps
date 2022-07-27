@@ -1,0 +1,28 @@
+﻿@page
+@using ThirdApp;
+@{
+    ViewData["Title"] = "Third app";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Third App</h1>
+</div>
+
+<base href="/" />
+
+<component type="typeof(App)" render-mode="WebAssemblyPrerendered"/>
+<script src="/apps/thirdapp/_framework/blazor.webassembly.js" autostart="false"></script>
+<script>
+    Blazor.start({
+        loadBootResource: function(type, name, defaultUri, integrity) {
+            const APP_NAME = "apps/thirdapp"
+            let path = "";
+
+            defaultUri.includes(window.location.origin) ?
+                path = `${window.location.origin}/${APP_NAME}/_framework/${name}` :
+                path = `${window.location.origin}/${APP_NAME}/${defaultUri}`;
+
+            return path;
+        }
+    });
+</script>

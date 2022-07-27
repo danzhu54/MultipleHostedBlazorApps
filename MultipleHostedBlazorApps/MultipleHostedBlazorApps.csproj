@@ -13,6 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Clients\FirstApp\FirstApp.csproj" />
 	<ProjectReference Include="..\Clients\SecondApp\SecondApp.csproj" />
+	<ProjectReference Include="..\Clients\ThirdApp\ThirdApp.csproj" />
     <ProjectReference Include="..\Shared\SharedResources.csproj" />
   </ItemGroup>
 </Project>

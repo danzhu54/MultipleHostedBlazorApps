@@ -14,30 +14,11 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-//app.MapWhen(ctx => ctx.Request.Path.StartsWithSegments("/apps"), spa =>
-//{
-//    spa.UseBlazorFrameworkFiles("/first");
-//    spa.UseStaticFiles("/first");
-//});
-
-//app.MapWhen(ctx => ctx.Request.Path.StartsWithSegments("/apps"), spa =>
-//{
-//    spa.UseBlazorFrameworkFiles("/second");
-//    spa.UseStaticFiles("/second");
-
-//    spa.UseRouting();
-//    spa.UseEndpoints(endpoints =>
-//    {
-//        endpoints.MapControllers();
-//        endpoints.MapFallbackToFile("/second/{*path:nonfile}",
-//            "/apps/secondapp");
-//    });
-//});
-
 app.UseHttpsRedirection();
 
 app.UseBlazorFrameworkFiles("/apps/firstapp");
 app.UseBlazorFrameworkFiles("/apps/secondapp");
+app.UseBlazorFrameworkFiles("/apps/thirdapp");
 
 app.UseStaticFiles();
 app.UseRouting();

@@ -1,4 +1,4 @@
-﻿@page "/"
+﻿@page "/apps/firstapp"
 @using SharedResources
 @inject HttpClient Http
 
@@ -38,5 +38,6 @@ else
 @code {
     private WeatherForecast[]? forecasts;
 
-    protected async override Task OnInitializedAsync() => forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("sample-data/weather.json");
+    private static Uri RESOURCE_URI = new Uri("https://localhost:44329/sample-data/weather.json");
+    protected async override Task OnInitializedAsync() => forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>(RESOURCE_URI);
 }
